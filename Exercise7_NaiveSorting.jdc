@@ -1,0 +1,40 @@
+print("Please insert the first value:");
+String input = System.console().readLine();
+print("Please insert the second value:");
+String secondinput = System.console().readLine();
+print("Please insert the third value:");
+String thirdinput = System.console().readLine();
+
+int first = Integer.parseInt(input);
+int second = Integer.parseInt(secondinput);
+int third = Integer.parseInt(thirdinput);
+
+
+if(first < second) {
+	if(second < third) {
+		println("The List is " + first + "," + second + "," + third);
+	}
+	else {
+		if(first < third) {
+			println("The List is " + first + "," + third + "," + second);
+		}
+		else
+		{
+			println("The List is " + third + "," + first + "," + second);
+		}
+	}
+}
+else { 
+	if(first < third) {
+		println("The List is " + second + "," + first + "," + third);
+	}
+	else {
+		if(second < third) {
+			println("The List is " + second + "," + third + "," + first);
+		}
+		else
+		{
+			println("The List is " + third + "," + second + "," + first);
+		}
+	}
+}

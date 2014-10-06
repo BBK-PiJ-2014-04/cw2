@@ -1,0 +1,11 @@
+print("Please insert the first value:");
+String input = System.console().readLine();
+print("Please insert the second value:");
+String secondinput = System.console().readLine();
+
+int firstmultiplier = Integer.parseInt(input);
+int secondmultiplier = Integer.parseInt(secondinput);
+
+int result = firstmultiplier * secondmultiplier;
+
+println("This is the result of the multiplication:" + result);

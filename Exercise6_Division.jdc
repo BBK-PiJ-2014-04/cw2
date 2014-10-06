@@ -1,0 +1,29 @@
+print("Please insert the first value:");
+String input = System.console().readLine();
+print("Please insert the second value:");
+String secondinput = System.console().readLine();
+
+int first = Integer.parseInt(input);
+int second = Integer.parseInt(secondinput);
+
+int Dividend;
+int Divisor;
+
+if(first > second) {
+	Dividend = first;
+	Divisor = second;
+}
+else {
+	Dividend = second;
+	Divisor = first;
+}
+
+int count = 0;
+while(Dividend >= (Divisor * (count+1))) {
+	count ++;
+}
+
+int remainder = (Dividend - Divisor * count);
+
+println("The result of the Division is:" + count);
+println("The remainder of the Division is:" + remainder);
