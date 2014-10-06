@@ -2,6 +2,7 @@
 boolean valid = false;
 boolean cardnumber = true;
 print("Please insert a valid first card:");
+int value;
 
 while(!valid) {
 	String input = System.console().readLine();
