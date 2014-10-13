@@ -1,3 +1,12 @@
+System.out.print("Please write the two numbers involved in the operation:"); 
+String input1 = System.console().readLine();
+String input2 = System.console().readLine();
+double inputvalue1 = Double.parseDouble(input1);
+double inputvalue2 = Double.parseDouble(input2);
+Calculator calc = new Calculator();
+double result = calc.addition(inputvalue1,inputvalue2);
+println("That's the result " + result );
+
 class Calculator {
 	
 	double addition(double first,double second) {
@@ -14,3 +23,5 @@ class Calculator {
 			return first/second;
 	}
 }
+
+
