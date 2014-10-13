@@ -6,11 +6,13 @@ public class Exercise2_CommandLineCalculator
 	{
 System.out.print("Please write the operation (basic) you want to perform:"); 
 String input = System.console().readLine(); 
-String[] operationcontainer = input.split("/");
 Calculator calc = new Calculator();
 double first = 0;
 double second = 0;
+String[] operationcontainer = input.split("/");
+System.out.println(operationcontainer.length); //verify the value at this point
 if(operationcontainer.length == 2) { //We are gonna perform just basic operation
+	System.out.println("I'm in");
 	first = Double.parseDouble(operationcontainer[0]);
 	second = Double.parseDouble(operationcontainer[1]);
 	calc.division(first,second);
