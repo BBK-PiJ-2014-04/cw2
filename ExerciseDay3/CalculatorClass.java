@@ -4,6 +4,8 @@ public class CalculatorClass
 		private static Scanner scanner=new Scanner(System.in); static{scanner.useDelimiter(System.getProperty("line.separator"));}
 	public static void main(String[] args)
 	{
+//Exercise 1 
+
 System.out.print("Please write the two numbers involved in the operation(press enter after the first entry):"); 
 String input1 = System.console().readLine(); 
 String input2 = System.console().readLine(); //we assume the user is passing integers and not string, otherwise we should use try-catch construct
