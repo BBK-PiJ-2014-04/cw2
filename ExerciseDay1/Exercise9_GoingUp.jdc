@@ -1,0 +1,23 @@
+String input;
+int seqnum = 0;
+int prevnum = 0;
+boolean consecutive = true;
+while(seqnum != -1) {
+	println("Please enter the next positive number of the sequence:"); 
+	input = System.console().readLine();
+	seqnum = Integer.parseInt(input);
+	if(seqnum < -1) {
+		print("Please do not enter negative values"); 
+	}
+	else {
+		if(seqnum != (prevnum + 1)) {
+			consecutive = false;
+		}
+	}
+}
+if(consecutive) {
+	println("Yes, the numbers are consecutive");
+}
+else {
+	println("No, the numbers are not consecutive");
+}
