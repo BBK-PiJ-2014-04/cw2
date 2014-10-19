@@ -1,0 +1,40 @@
+String input1;
+String input2;
+double cost = 0;
+double paid = 0;
+
+while(paid < cost) {
+	println("Please enter the cost of the product:"); 
+	input1 = System.console().readLine();
+	cost = Double.parseDouble(input1);
+	println("Please enter the amount paid of the product:"); 
+	input2 = System.console().readLine();
+	paid = Double.parseDouble(input2);
+	if(paid < cost) {
+		println("Sorry, no discounts in this shop.");
+	}
+}
+
+//we assume that the user is kind and he's inserting valid input, I'm waiting that we introduce the try..catch construct to do some exception managment :D
+int[] notes = {50,20,10,5};
+int[] coins = {2,1,0.5,0.2,0.1,0.05,0.02,0.01};
+change = paid - cost;
+println("The change is " + change + " composed as follows:");
+int count = 0;
+int numberof = 0;
+while(change > 4.99) {
+	numberof = change % notes[count];
+	value = notes[count];
+	println( numberof + ((numberof < 2) ? " note" : " notes") + " of " + value);
+	change = change - ((numberof) * value);
+	count++;
+}
+count = 0;
+numberof = 0;
+while(change > 0) {
+	numberof = change % coins[count];
+	value = coins[count];
+	println( numberof + ((numberof < 2) ? " coin" : " coins") + " of " + value);
+	change = change - ((numberof) * value);
+	count++;
+}
