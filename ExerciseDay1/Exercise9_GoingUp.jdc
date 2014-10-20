@@ -10,8 +10,7 @@ while(seqnum != -1) {
 		print("Please do not enter negative values"); 
 	}
 	else {
-		if(prevnum != -5) {
-			println(seqnum + "-" + prevnum);
+		if(prevnum != -5 && seqnum != -1) {			
 			if(seqnum != (prevnum + 1)) {
 				consecutive = false;
 			}

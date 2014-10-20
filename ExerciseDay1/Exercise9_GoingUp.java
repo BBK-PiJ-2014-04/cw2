@@ -16,7 +16,7 @@ while(seqnum != -1) {
 		System.out.print("Please do not enter negative values"); 
 	}
 	else {
-		if(prevnum != -5) {
+		if(prevnum != -5 && seqnum != -1) {			
 			if(seqnum != (prevnum + 1)) {
 				consecutive = false;
 			}
