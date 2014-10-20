@@ -6,9 +6,10 @@ while(seqnum != -1) {
 	input = System.console().readLine();
 	seqnum = Integer.parseInt(input);
 	if(seqnum < -1) {
-		print("Please do not enter negative values"); 
+		println("Please do not enter negative values"); 
 	}
 	if(maxnum == 0 || seqnum > maxnum) {
 		maxnum = seqnum;
 	}
 }
+println("The maximum number of the sequence is: " + maxnum);
