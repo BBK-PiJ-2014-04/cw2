@@ -8,7 +8,13 @@ System.out.print("Please write your string in order to find out if it is a palin
 String input = System.console().readLine();
 int index = 0;
 boolean isPalindrome = MyStringsOp.PalindromChecker(input,index);
-System.out.println(isPalindrome);
+if(isPalindrome) {
+	System.out.println("The string is a palindrome");
+}
+else {
+	System.out.println("The string isn't a palindrome");
+}
+
 
 
 }}

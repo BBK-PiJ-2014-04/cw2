@@ -2,7 +2,13 @@ print("Please write your string in order to find out if it is a palindrome:");
 String input = System.console().readLine();
 int index = 0;
 boolean isPalindrome = MyStringsOp.PalindromChecker(input,index);
-println(isPalindrome);
+if(isPalindrome) {
+	println("The string is a palindrome");
+}
+else {
+	println("The string isn't a palindrome");
+}
+
 
 
 class MyStringsOp {

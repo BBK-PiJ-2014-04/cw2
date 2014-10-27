@@ -1,0 +1,15 @@
+print("Please provide a base:");
+String value = System.console().readLine();
+int base = Integer.parseInt(value);
+print("Please provide an exponent:");
+String value2 = System.console().readLine();
+int exponent = Integer.parseInt(value2);
+int power = pow(base,exponent);
+
+class MathOps2 {
+	public static int pow(int base,int exp) {
+		if(exp > 1) {
+			return base*pow(base,--exp);
+		}
+	}
+}
