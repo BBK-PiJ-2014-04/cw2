@@ -1,22 +1,30 @@
 println("Here's the list of the first 1000 primes");
 int i = 1;
+int count = 0;
+int numberToevaluate = 0;
 while(i < 1000) {
+	numberToevaluate++;
 	boolean prime = true;
-	if(i > 2) {
-		for(int j = 2; j < i; j++) {
-			if(i % j == 0) {
+	if(numberToevaluate > 2) {
+		for(int j = 2; j < numberToevaluate; j++) {
+			if(numberToevaluate % j == 0) {
 				prime = false;
 				break;
 			}
 		}
 	}
 	if(prime || i < 3) {
-		if(i == 1) {
-			print(i);
+		count++;
+		if(numberToevaluate == 1) {
+			print(numberToevaluate);
 		}
 		else {
-			print("," + i);
+			print("," + numberToevaluate);
 		}
 		i++;
+		if(count % 10 == 0) {
+			println("");
+		}
 	}
 }
+println("");
