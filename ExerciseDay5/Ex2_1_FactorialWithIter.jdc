@@ -1,0 +1,7 @@
+String input = System.console().readLine();
+int inputvalue = Int.parseInt(input);
+int factorial = 0;
+while(inputvalue1 > 1) {
+	factorial += inputvalue * (inputvalue - 1);
+}
+println("Here's the factorial of the number you have chosen: " + factorial);
