@@ -18,11 +18,6 @@ System.out.println(myFactorial);
 class MyMath {private static Scanner scanner=new Scanner(System.in); static{scanner.useDelimiter(System.getProperty("line.separator"));}
 	public int factorial(int num) {
 		int numFactorial = num;
-		/*		numFactorial = numFactorial * (--num);
-		if(num > 1) {
-			numFactorial = numFactorial * factorial(num);
-		}
-		*/
 		if(num > 1) {
 			numFactorial = numFactorial * factorial(--num);
 		}

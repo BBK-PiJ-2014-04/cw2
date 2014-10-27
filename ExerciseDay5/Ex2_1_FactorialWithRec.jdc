@@ -10,12 +10,6 @@ println(myFactorial);
 class MyMath {
 	public int factorial(int num) {
 		int numFactorial = num;
-		/*
-		numFactorial = numFactorial * (--num);
-		if(num > 1) {
-			numFactorial = numFactorial * factorial(num);
-		}
-		*/
 		if(num > 1) {
 			numFactorial = numFactorial * factorial(--num);
 		}
