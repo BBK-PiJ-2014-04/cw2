@@ -1,0 +1,20 @@
+print("Please write your number to find its factorial:"); 
+String input = System.console().readLine();
+int inputvalue = Integer.parseInt(input);
+MyMath mymath = new MyMath();
+int myFactorial = 0;
+myFactorial += mymath.factorial(inputvalue);
+println(myFactorial);
+
+
+class MyMath {
+	public int factorial(int num) {
+		print(num);
+		int numFactorial = num;
+		numFactorial = numFactorial * (--num);
+		if(num > 1) {
+			numFactorial += factorial(num);
+		}
+		return numFactorial;
+	}
+}
