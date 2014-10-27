@@ -1,0 +1,20 @@
+println("Here's the list of all the prime numbers lower that 1000");
+for(i = 1; i <= 1000; i++) {
+	boolean prime = true;
+	if(i > 2) {
+		for(int j = 2; j < i; j++) {
+			if(i % j == 0) {
+				prime = false;
+				break;
+			}
+		}
+	}
+	if(prime || i < 3) {
+		if(i == 1) {
+			print(i);
+		}
+		else {
+			print("," + i);
+		}
+	}
+}

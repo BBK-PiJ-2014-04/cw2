@@ -1,0 +1,18 @@
+int numberToGuess = Math.abs(1000 * Math.random())
+int input = -1;
+int guesses = 0;
+println("Try to guess my number!");
+while(true) {
+	print("Tell me a number:");
+	String input = System.console().readLine();
+	int inputvalue = Integer.parseInt(input);
+	if(numberToGuess == input) {
+		println("Correct!");
+		println("You needed " + guesses + " guesses");
+		break;
+	}
+	else {
+		guesses++;
+		String output = "No! my number is" + (input < numberToGuess ? " higher" : "lower");
+	}
+}
