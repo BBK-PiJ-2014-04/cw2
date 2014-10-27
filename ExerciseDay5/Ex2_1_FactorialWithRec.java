@@ -9,18 +9,22 @@ String input = System.console().readLine();
 int inputvalue = Integer.parseInt(input);
 MyMath mymath = new MyMath();
 int myFactorial = 0;
-myFactorial += mymath.factorial(inputvalue);
+myFactorial = mymath.factorial(inputvalue);
+System.out.println(myFactorial);
 
 
 }}
 
 class MyMath {private static Scanner scanner=new Scanner(System.in); static{scanner.useDelimiter(System.getProperty("line.separator"));}
 	public int factorial(int num) {
-		System.out.print(num);
 		int numFactorial = num;
-		numFactorial = numFactorial * (--num);
+		/*		numFactorial = numFactorial * (--num);
 		if(num > 1) {
-			numFactorial += factorial(num);
+			numFactorial = numFactorial * factorial(num);
+		}
+		*/
+		if(num > 1) {
+			numFactorial = numFactorial * factorial(--num);
 		}
 		return numFactorial;
 	}

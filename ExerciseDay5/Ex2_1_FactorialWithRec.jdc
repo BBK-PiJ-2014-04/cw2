@@ -3,17 +3,21 @@ String input = System.console().readLine();
 int inputvalue = Integer.parseInt(input);
 MyMath mymath = new MyMath();
 int myFactorial = 0;
-myFactorial += mymath.factorial(inputvalue);
+myFactorial = mymath.factorial(inputvalue);
 println(myFactorial);
 
 
 class MyMath {
 	public int factorial(int num) {
-		print(num);
 		int numFactorial = num;
+		/*
 		numFactorial = numFactorial * (--num);
 		if(num > 1) {
-			numFactorial += factorial(num);
+			numFactorial = numFactorial * factorial(num);
+		}
+		*/
+		if(num > 1) {
+			numFactorial = numFactorial * factorial(--num);
 		}
 		return numFactorial;
 	}
