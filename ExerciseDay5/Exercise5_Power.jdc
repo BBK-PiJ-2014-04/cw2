@@ -4,12 +4,15 @@ int base = Integer.parseInt(value);
 print("Please provide an exponent:");
 String value2 = System.console().readLine();
 int exponent = Integer.parseInt(value2);
-int power = pow(base,exponent);
+println("Your Power is: " + MathOps2.pow(base,exponent));
 
 class MathOps2 {
 	public static int pow(int base,int exp) {
-		if(exp > 1) {
+		if(exp > 0) {
 			return base*pow(base,--exp);
+		}
+		else {
+			return 1;
 		}
 	}
 }
