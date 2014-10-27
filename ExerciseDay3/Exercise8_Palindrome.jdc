@@ -6,7 +6,7 @@ boolean isPalindrome = true;
 for(int i = 0; i < numOfIter; i++)
 {
 	rightpart = input.length()-i;
-	println(input.substring(i,i+1) + "-" + input.substring(rightpart-1,rightpart));
+	//println(input.substring(i,i+1) + "-" + input.substring(rightpart-1,rightpart));
 	if(!input.substring(i,i+1).equals(input.substring(rightpart-1,rightpart))) {
 		isPalindrome = false;
 		break;
