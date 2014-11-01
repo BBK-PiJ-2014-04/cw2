@@ -1,0 +1,9 @@
+println("Please enter your sentence: "); 
+String sentence = System.console().readLine();
+String reversedsentence = ""
+
+println("Here's your palindrome: ");
+print(sentence + " ")
+for(int i = 1; i <= sentence.length(); i++) {
+	print(sentence.charAt(sentence.length() - i));		
+}
