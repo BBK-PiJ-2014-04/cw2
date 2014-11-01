@@ -22,4 +22,6 @@ where(isCycling) {
 			howmany++;
 		}		
 	}
+	println("There are " + howmany + " occurencies of " + letterToFind + " in the sentence you submitted");
 }
+println("Repeated character. Exiting the program...Thank you for your cooperation. Good bye!");

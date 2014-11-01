@@ -11,7 +11,7 @@ String sentence = System.console().readLine();
 for(int i = 0; i < sentence.length(); i++) {
 	isIn = true;
 	for(m = 0; m < subToFind.length(); m++) {
-		if(!subToFind.charAt(m).equals(sentence.charAt(m)))
+		if(!subToFind.charAt(m) == sentence.charAt(m))
 		{
 			isIn = false;
 			break
