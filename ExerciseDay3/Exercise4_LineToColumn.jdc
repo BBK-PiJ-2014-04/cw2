@@ -1,7 +1,19 @@
 println("Please enter your sentence"); 
 input1 = System.console().readLine();
 
-for(int i = 0; i < input1.length; i++)
-{
+/*
+Listing Letters
+for(int i = 0; i < input1.length; i++) {
 	println(input1.charAt(i));
+}
+*/
+
+//Listing words
+for(int m = 0; m < input1.length; m++) {
+	if(input1.charAt(m).equals(" ")) {
+		println("");
+	}
+	else {
+		print(input1.charAt(i));
+	}
 }
