@@ -71,4 +71,43 @@ public class Fraction {
         }
         return a;
     }
+    
+    public int myLcd(int a, int b)
+    {
+    	int greater;
+    	int lesser;
+        while (true)
+        {
+        	if (a > b)
+            {
+                greater = a; lesser = b;
+            }
+            else if (a < b)
+            {
+                greater = b; lesser = a;
+            }
+            else
+            {
+                return a;
+            }
+            for (int iterator = 1; iterator <= lesser; iterator++)
+            {
+                if ((greater * iterator) % lesser == 0)
+                {
+                    return iterator * greater;
+                }
+            }
+            return 0;
+        }
+    }
+    
+    public Fraction add(Fraction other) {
+    	int denom = this.getDenominator();
+        if(this.getDenominator() != other.getDenominator()) {
+        	denom = myLcd(this.getDenominator(),other.getDenominator());
+        }
+
+        int num = ((this.getNumerator() * (denom / this.getDenominator())) + (other.getNumerator() * (denom / other.getDenominator())));
+        return new Fraction(num, denom);
+    }
 }
