@@ -16,20 +16,28 @@ public class SpyField {
 		 int randomInt = 0;
 		 while(m > 0) {
 			 Random randomGenerator = new Random();
-			 randomInt = randomGenerator.nextInt(10);
-			 System.out.println(randomInt);
-			 /*switch(randomInt) {
+			 randomInt = randomGenerator.nextInt(15);
+			 System.out.println("Fire!");
+			 switch(randomInt) {
 				 case 1:
 					 mySpy.die();
+					 break;
 				 case 2:
 					 myOtherSpy.die();
+					 break;
 				 case 3:
 					 myGoodSpy.die();
+					 break;
 				 case 4:
 					 myBadspy.die();
+					 break;
 				 case 5:
 					 doubleOSeven.die();
-			 }*/
+					 break;
+				 default:
+					 System.out.println("Missed!");
+					 break;
+			 }
 			 m--;
 		 }
 	 }
