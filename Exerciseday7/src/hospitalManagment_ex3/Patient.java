@@ -38,5 +38,13 @@ public class Patient {
 			return this.nextPatient.deletePatient(patient);
 		}
 	}
+	
+	public Patient getNextPatient() {
+		return nextPatient;
+	}
+	
+	public String showPatientInfo() {
+		return String.format("Patient Name: %s; Age: %d; Diagnosis: %s", name, age, illness);
+	}
 
 }
