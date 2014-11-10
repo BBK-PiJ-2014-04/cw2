@@ -23,17 +23,14 @@ public class HospitalManager {
 		 Patient anthony = new Patient("Anthony",19,"Hepatitis");
 		 patientList.addPatient(anthony);
 		 
-		 
-		 /*
-		 Patient actualPatient = null;
-		 do {
-		     actualPatient = patientList;
+		 Patient actualPatient = patientList;
+		 while (actualPatient != null) {
 		     System.out.println(actualPatient.showPatientInfo());
 		     actualPatient = actualPatient.getNextPatient();
-		} while (actualPatient != null);
+		 } 
 		 
 		 patientList.deletePatient(violet);
-		 patientList.deletePatient(paul);*/
+		 patientList.deletePatient(paul);
 		 
 	 }
 }
