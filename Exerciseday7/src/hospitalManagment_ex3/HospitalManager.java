@@ -32,5 +32,21 @@ public class HospitalManager {
 		 patientList.deletePatient(violet);
 		 patientList.deletePatient(paul);
 		 
+		 System.out.println("New List without the two deleted Patients:");
+		 actualPatient = patientList;
+		 while (actualPatient != null) {
+		     System.out.println(actualPatient.showPatientInfo());
+		     actualPatient = actualPatient.getNextPatient();
+		 }
+		 
+		 //Delete the first element of the list(which is Philip in this case)
+		 patientList = patientList.getNextPatient();
+		 
+		 System.out.println("New List without the two deleted Patients and the first element:");
+		 actualPatient = patientList;
+		 while (actualPatient != null) {
+		     System.out.println(actualPatient.showPatientInfo());
+		     actualPatient = actualPatient.getNextPatient();
+		 }
 	 }
 }
