@@ -13,6 +13,6 @@ public class Spy {
 	public void die() {
 		 System.out.println(String.format("Spy %d has been detected and eliminated",spyID));
 		 spyCount--;
-		 System.out.println(String.format("%d $s remaining",spyID,(spyCount > 1) ? "spies" : "spy"));
+		 System.out.println(String.format("%d %s remaining",spyCount,(spyCount > 1) ? "spies" : "spy"));
 	}
 }
