@@ -110,4 +110,21 @@ public class Fraction {
         int num = ((this.getNumerator() * (denom / this.getDenominator())) + (other.getNumerator() * (denom / other.getDenominator())));
         return new Fraction(num, denom);
     }
+    
+    public Fraction divide(Fraction other) {
+
+        int num = this.getNumerator() * other.getDenominator();
+        int denom = this.getDenominator() * other.getNumerator();
+        return new Fraction(num, denom);
+    }
+    
+    public Fraction subtract(Fraction other) {
+    	int denom = this.getDenominator();
+        if(this.getDenominator() != other.getDenominator()) {
+        	denom = myLcd(this.getDenominator(),other.getDenominator());
+        }
+
+        int num = ((this.getNumerator() * (denom / this.getDenominator())) - (other.getNumerator() * (denom / other.getDenominator())));
+        return new Fraction(num, denom);
+    }
 }
