@@ -31,6 +31,13 @@ public class FractionTest {
 	g = new Fraction(4,5);
 	h = new Fraction(1,2);
 	if (!f.equals(g.divide(h))) System.out.println("Division 2 failed");
+	f = new Fraction(0,-7);
+	g = new Fraction(-8,9);
+	h = new Fraction(8,-9);
+	test(g.negate(),new Fraction(8,9),"error test 6");
+	test(h.absValue(),new Fraction(8,9),"error test 7");
+	
+	test(f.absValue(),new Fraction(0,5),"error test 8");
 
         // extend with extra tests
     }
