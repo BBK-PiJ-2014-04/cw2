@@ -10,6 +10,7 @@ public class FractionCalculator {
 	
 	private String operator;
 	private String possibleOperations = "+-*/";
+	private String possibleModifiers = ""
 	
 	public static void main(String[] args) {
 		 String input;
@@ -43,8 +44,8 @@ public class FractionCalculator {
 				operator = inputString;
 			}
 		}
-		else {
-					 
+		else if() {
+				
 		}
 		
 		return null;
