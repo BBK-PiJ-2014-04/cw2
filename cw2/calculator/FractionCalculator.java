@@ -9,7 +9,7 @@ import java.util.List;
 public class FractionCalculator {
 	
 	private String operator;
-	String[] possibleOperations = {'+','-','*','/'};
+	private String possibleOperations = "+-*/";
 	
 	public static void main(String[] args) {
 		 String input;
@@ -19,9 +19,10 @@ public class FractionCalculator {
 		 
 		 try {
 			 input = currentvalue + br.readLine();
-			 String[] userInput = input.split("-");
+			 String[] userInput = input.split(" ");
+			 FractionCalculator myCalculator = new FractionCalculator();
 			 for( String singleValue : userInput ) {
-				 currentvalue = evaluate(currentvalue, singleValue);
+				 currentvalue = myCalculator.evaluate(currentvalue, singleValue);
 			 }
 	      } catch (IOException ioe) {
 	         System.out.println("The input generated an unexpected exception!");
@@ -30,19 +31,21 @@ public class FractionCalculator {
 		 
 	}
 	
-	public static Fraction evaluate(Fraction fraction, String inputString){
-		if.contains)
-		switch(inputString) {
-			 case "+":
-				 break;
-			 case "-":	
-				 break;
-			 case "*":
-				 break;
-			 case "/":	
-				 break;
-			 default:
-		 }
+	public Fraction evaluate(Fraction fraction, String inputString){
+		if(possibleOperations.contains(inputString))
+		{
+			if(operator != null) {
+				System.out.println("Your input is an operator, but there's already one in memory! Let's try again!");
+				return new Fraction(0,1);
+			}
+			else
+			{
+				operator = inputString;
+			}
+		}
+		else {
+					 
+		}
 		
 		return null;
 	}
