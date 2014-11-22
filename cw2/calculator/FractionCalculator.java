@@ -10,7 +10,7 @@ import java.util.List;
 
 public class FractionCalculator 
 {
-	
+	private boolean quitProgram = false;
 	private String operator;
 	private String[] possibleOperations = {"+","-","*","/"};
 	private String[] possibleModifiers = {"a","abs","n","neg","c","clear","q","quit"};
@@ -35,7 +35,7 @@ public class FractionCalculator
 					 initialValue = new Fraction(0,1);
 				 }
 				 result = myCalculator.evaluate(initialValue, input);
-				 if(result == null)
+				 if(myCalculator.quitProgram)
 				 {
 					myCalculator.exitProgram();
 				 }
@@ -74,7 +74,10 @@ public class FractionCalculator
 			else if(Arrays.asList(possibleModifiers).contains(singleValue.toLowerCase()))
 			{
 				performModifiers(singleValue);
-				
+				if(quitProgram)
+				{
+					return currentValue;
+				}
 			}
 		}
 		return currentValue;
@@ -94,9 +97,11 @@ public class FractionCalculator
 		case "clear":
 		case "c":
 			currentValue = new Fraction(0,1);
+			break;
 		case "quit":
 		case "q":
-			currentValue = null;
+			quitProgram = true;
+			break;
 		}
 	}
 
