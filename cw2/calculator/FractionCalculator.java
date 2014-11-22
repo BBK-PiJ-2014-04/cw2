@@ -116,6 +116,7 @@ public class FractionCalculator
 				interFraction = currentValue.multiply(fraction);
 				break;
 		}
+		operator = null;
 		return interFraction;
 	}
 	
