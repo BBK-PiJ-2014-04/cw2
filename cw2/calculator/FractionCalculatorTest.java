@@ -35,7 +35,9 @@ public class FractionCalculatorTest {
 		System.out.println((testInputSequence("4/3 * 3/2 / 1/2",new Fraction(4,1))) ? "ok" : "not ok");
 		//System.out.println((testInputSequence("4/3 * 3/2 c / 1/2",new Fraction(4,1))) ? "ok" : "not ok");
 		System.out.println((testInputSequence("4/3 * 3/2 c / 1/2",new Fraction(0,1))) ? "ok" : "not ok");
-	
+
+		//Testing invalid input
+		System.out.println((testInputSequence("4/3 * 3/2 ter",new Fraction(0,1))) ? "ok" : "not ok");
 	}
 	
 	public static boolean testInputSequence(String input,Fraction result)

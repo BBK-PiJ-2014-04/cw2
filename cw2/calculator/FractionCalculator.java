@@ -5,8 +5,6 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
 
 public class FractionCalculator 
 {
@@ -61,7 +59,8 @@ public class FractionCalculator
 
 	}
 	
-	public Fraction evaluate(Fraction fraction, String inputString){
+	public Fraction evaluate(Fraction fraction, String inputString)
+	{
 		String[] userInput = inputString.split(" ");
 		for( String singleValue : userInput ) 
 		{
@@ -85,14 +84,16 @@ public class FractionCalculator
 			}
 			else 
 			{
-				System.out.println("Invalid Input, the calculator will be reset");
-				return new Fraction(0,1);
+				System.out.println("Unfortunately, part of the input was invalid. The Program will be now terminated, please re-run it to perform Fraction operations.");
+				currentValue = new Fraction(0,1);
+				System.exit(1);
 			}
 		}
 		return currentValue;
 	}
 
-	private void performModifiers(String singleValue) {
+	private void performModifiers(String singleValue) 
+	{
 		switch(singleValue.toLowerCase()) 
 		{
 		case "abs":
@@ -169,13 +170,25 @@ public class FractionCalculator
 		return interFraction;
 	}
 	
+	public void startProgram() 
+	{
+		System.out.println("Welcome to the Fraction Calculator - Powered by Salvatore Cardali");
+		System.out.println("The calculator will perform operations between Fractions, such as:");
+		System.out.println("- The 4 Canonical Operations (please use +,-,*,/)");
+		System.out.println("- Write Neg or N to negate the Fraction currently held on the Calculator");
+		System.out.println("- Write Abs or A to get the absolute value of the Fraction currently held on the Calculator");
+		System.out.println("- Write Clear or C to reset the Calculator and set the Fraction held to 0");
+		System.out.println("- Write Quit or Q to quit the Calculator");
+	}
+	
 	public void exitProgram()
 	{
 		 System.out.println("Thanks for using Salvatore Cardali's calculator. We hope to see you soon.");
 		 System.exit(1);
 	}
 	
-	public static boolean isInteger(String str) {
+	public static boolean isInteger(String str) 
+	{
 	    try 
 	    {
 	        Integer.parseInt(str);
