@@ -22,14 +22,13 @@ public class FractionCalculator
 		 Fraction result = null;
 		 Fraction initialValue = null;
 		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		 FractionCalculator myCalculator = new FractionCalculator();
 
 		 while(true) 
 		 {
-			 initialValue = result;
 			 try 
 			 {
 				 input = br.readLine();
-				 FractionCalculator myCalculator = new FractionCalculator();
 				 if(initialValue == null)
 				 {
 					 initialValue = new Fraction(0,1);
@@ -38,6 +37,11 @@ public class FractionCalculator
 				 if(myCalculator.quitProgram)
 				 {
 					myCalculator.exitProgram();
+				 }
+				 else
+				 {
+					 initialValue = myCalculator.currentValue = result;
+					 System.out.println(result.toString());
 				 }
 			 }
 			 catch(EOFException eof)

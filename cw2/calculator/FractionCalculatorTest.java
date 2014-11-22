@@ -4,7 +4,7 @@ package calculator;
 public class FractionCalculatorTest {
 	public static void main(String[] args) {
 		
-		System.out.println((testInputSequence("1 + 2 q",new Fraction(3,1))) ? "ok" : "not ok");
+		
 		
 		//Test if the correct input is taken, as if we don't have any operation the starting input should be changed
 		System.out.println((testInputSequence("7 9 12",new Fraction(12,4))) ? "ok" : "not ok");
@@ -20,12 +20,17 @@ public class FractionCalculatorTest {
 		System.out.println((testInputSequence("1/-2 3/2 * 7/2 * 1/3",new Fraction(-7,4))) ? "ok" : "not ok");
 		System.out.println((testInputSequence("1/-2 3/2 * 7/2 * 1/3",new Fraction(7,4))) ? "ok" : "not ok");
 		System.out.println((testInputSequence("1/-2 3/2 * -7/2 * 1/3",new Fraction(7,-4))) ? "ok" : "not ok");
-	
+		System.out.println((testInputSequence("1/-2 3/2 * -7/2 - neg +",new Fraction(7,-4))) ? "ok" : "not ok");
+		
 		//Test the absolute and negate (not implemented yet, I want to try the "sure failing" tests
 		System.out.println((testInputSequence("2/-3 neg",new Fraction(2,3))) ? "ok" : "not ok");
 		System.out.println((testInputSequence("1/-2 3/2 * 7/2 * 1/3 neg",new Fraction(-7,4))) ? "ok" : "not ok");
-	
-		
+		System.out.println((testInputSequence("1 + 2 q * 3",new Fraction(3,1))) ? "ok" : "not ok");
+		System.out.println((testInputSequence("1/-2 3/2 * -7/2 - abs",new Fraction(21,-4))) ? "ok" : "not ok");
+		System.out.println((testInputSequence("1/-2 3/2 * -7/2 - abs",new Fraction(21,4))) ? "ok" : "not ok");
+		System.out.println((testInputSequence("4/3 * 3/2 / 1/2",new Fraction(4,1))) ? "ok" : "not ok");
+		System.out.println((testInputSequence("4/3 * 3/2 c / 1/2",new Fraction(4,1))) ? "ok" : "not ok");
+		System.out.println((testInputSequence("4/3 * 3/2 c / 1/2",new Fraction(0,1))) ? "ok" : "not ok");
 	}
 	
 	public static boolean testInputSequence(String input,Fraction result)
