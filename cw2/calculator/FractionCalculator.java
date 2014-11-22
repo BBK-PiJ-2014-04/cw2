@@ -62,7 +62,7 @@ public class FractionCalculator
 			{
 			}
 		}
-		return null;
+		return currentValue;
 	}
 
 	private void inputFunction(String singleValue) 
