@@ -69,7 +69,7 @@ public class FractionCalculator
 			{
 				inputFunction(singleValue);
 			}
-			if(Arrays.asList(possibleOperations).contains(singleValue))
+			else if(Arrays.asList(possibleOperations).contains(singleValue))
 			{
 				if(!setOperator(singleValue)) {
 					return new Fraction(0,1);
@@ -82,6 +82,11 @@ public class FractionCalculator
 				{
 					return currentValue;
 				}
+			}
+			else 
+			{
+				System.out.println("Invalid Input, the calculator will be reset");
+				return new Fraction(0,1);
 			}
 		}
 		return currentValue;
