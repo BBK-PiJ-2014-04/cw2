@@ -1,6 +1,7 @@
 package calculator;
 
 import java.io.BufferedReader;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ public class FractionCalculator
 	
 	private String operator;
 	private String[] possibleOperations = {"+","-","*","/"};
-	private String[] possibleModifiers = {"a","abs","n","neg","c","q"};
+	private String[] possibleModifiers = {"a","abs","n","neg","c","clear","q","quit"};
 	public Fraction currentValue;
 	
 	public static void main(String[] args) 
@@ -22,11 +23,11 @@ public class FractionCalculator
 		 Fraction initialValue = null;
 		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		 try 
+		 while(true) 
 		 {
-			 while(true) 
+			 initialValue = result;
+			 try 
 			 {
-				 initialValue = result;
 				 input = br.readLine();
 				 FractionCalculator myCalculator = new FractionCalculator();
 				 if(initialValue == null)
@@ -34,13 +35,25 @@ public class FractionCalculator
 					 initialValue = new Fraction(0,1);
 				 }
 				 result = myCalculator.evaluate(initialValue, input);
+				 if(result == null)
+				 {
+					myCalculator.exitProgram();
+				 }
 			 }
-	      } 
-		 catch (IOException ioe) 
-		 {
-	         System.out.println("The input generated an unexpected exception!");
-	         System.exit(1);
-	      }
+			 catch(EOFException eof)
+			 {
+				System.out.println("Goodbye");
+				System.exit(1);
+			 }
+			 catch (IOException ioe) 
+			 {
+				 initialValue = new Fraction(0,1);
+		         continue;
+		     }
+			 
+			
+		 } 
+		 
 
 	}
 	
@@ -58,11 +71,33 @@ public class FractionCalculator
 					return new Fraction(0,1);
 				}
 			}
-			else if(Arrays.asList(possibleModifiers).contains(singleValue))
+			else if(Arrays.asList(possibleModifiers).contains(singleValue.toLowerCase()))
 			{
+				performModifiers(singleValue);
+				
 			}
 		}
 		return currentValue;
+	}
+
+	private void performModifiers(String singleValue) {
+		switch(singleValue.toLowerCase()) 
+		{
+		case "abs":
+		case "a":
+			currentValue = currentValue.absValue();
+			break;
+		case "neg":
+		case "n":
+			currentValue = currentValue.negate();
+			break;
+		case "clear":
+		case "c":
+			currentValue = new Fraction(0,1);
+		case "quit":
+		case "q":
+			currentValue = null;
+		}
 	}
 
 	private void inputFunction(String singleValue) 
@@ -118,6 +153,12 @@ public class FractionCalculator
 		}
 		operator = null;
 		return interFraction;
+	}
+	
+	public void exitProgram()
+	{
+		 System.out.println("Thanks for using Salvatore Cardali's calculator. We hope to see you soon.");
+		 System.exit(1);
 	}
 	
 	public static boolean isInteger(String str) {
