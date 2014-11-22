@@ -103,13 +103,16 @@ public class FractionCalculator
 		switch(operation) 
 		{
 			case "+":
-				
+				currentValue.add(fraction);
 				break;
 			case "-":
+				currentValue.subtract(fraction);
 				break;
 			case "/":
+				currentValue.divide(fraction);
 				break;
 			case "*":
+				currentValue.multiply(fraction);
 				break;
 		}
 		return null;
