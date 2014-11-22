@@ -1,38 +1,28 @@
 package calculator;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Scanner;
 
 public class FractionCalculator {
 	
 	private String operator;
 	private String possibleOperations = "+-*/";
-	private String possibleModifiers = ""
+	private String possibleModifiers = "";
 	
 	public static void main(String[] args) {
-		 String input;
+		 String input = "";
 		 Fraction currentvalue = new Fraction(0,1);
-		 System.out.print(currentvalue.toString());
-		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		 
-		 try {
-			 input = currentvalue + br.readLine();
-			 String[] userInput = input.split(" ");
-			 FractionCalculator myCalculator = new FractionCalculator();
-			 for( String singleValue : userInput ) {
-				 currentvalue = myCalculator.evaluate(currentvalue, singleValue);
-			 }
-	      } catch (IOException ioe) {
-	         System.out.println("The input generated an unexpected exception!");
-	         System.exit(1);
-	      }
-		 
+		 Scanner userInput = new Scanner(System.in);
+		 while(!userInput.next().isEmpty()) { // only when you enter literal string 
+			 input += userInput.next();
+		 }
+		 FractionCalculator myCalculator = new FractionCalculator();
+		 currentvalue = myCalculator.evaluate(currentvalue, input);
 	}
 	
 	public Fraction evaluate(Fraction fraction, String inputString){
+		String[] userInput = inputString.split(" ");
 		if(possibleOperations.contains(inputString))
 		{
 			if(operator != null) {
@@ -44,9 +34,9 @@ public class FractionCalculator {
 				operator = inputString;
 			}
 		}
-		else if() {
+		/*else if() {
 				
-		}
+		}*/
 		
 		return null;
 	}
