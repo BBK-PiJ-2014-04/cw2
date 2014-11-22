@@ -81,7 +81,7 @@ public class FractionCalculator
 			currentValue = interFraction;
 		}
 		else {
-			performOperation(interFraction,operator);
+			currentValue = performOperation(interFraction,operator);
 		}
 	}
 	
@@ -100,22 +100,23 @@ public class FractionCalculator
 	
 	public Fraction performOperation(Fraction fraction,String operation)
 	{
+		Fraction interFraction = null;
 		switch(operation) 
 		{
 			case "+":
-				currentValue.add(fraction);
+				interFraction = currentValue.add(fraction);
 				break;
 			case "-":
-				currentValue.subtract(fraction);
+				interFraction = currentValue.subtract(fraction);
 				break;
 			case "/":
-				currentValue.divide(fraction);
+				interFraction = currentValue.divide(fraction);
 				break;
 			case "*":
-				currentValue.multiply(fraction);
+				interFraction = currentValue.multiply(fraction);
 				break;
 		}
-		return null;
+		return interFraction;
 	}
 	
 	public static boolean isInteger(String str) {
