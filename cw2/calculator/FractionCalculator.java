@@ -139,6 +139,7 @@ public class FractionCalculator
 	{
 		if(operator != null) {
 			System.out.println("Your input is an operator, but there's already one in memory! Let's try again!");
+			operator = null;
 			return false;
 		}
 		else

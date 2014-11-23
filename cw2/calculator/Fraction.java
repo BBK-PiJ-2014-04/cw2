@@ -13,6 +13,13 @@ public class Fraction {
         int gcd = myGcd(num, denom);
         setNumerator(num / gcd);
         setDenominator(denom / gcd);
+        if(denominator < 0)
+        {
+        	if(numerator > 0) {
+        		setNumerator(numerator * -1);
+        		 setDenominator(denominator * -1);
+        	}
+        }
     }
 
     @Override
@@ -65,7 +72,7 @@ public class Fraction {
         return a;
     }
     
-    public int myLcd(int a, int b)
+    public int myLcm(int a, int b)
     {
     	int greater;
     	int lesser;
@@ -122,7 +129,7 @@ public class Fraction {
     public Fraction add(Fraction other) {
     	int denom = this.getDenominator();
         if(this.getDenominator() != other.getDenominator()) {
-        	denom = myLcd(this.getDenominator(),other.getDenominator());
+        	denom = myLcm(this.getDenominator(),other.getDenominator());
         }
 
         int num = ((this.getNumerator() * (denom / this.getDenominator())) + (other.getNumerator() * (denom / other.getDenominator())));
@@ -139,7 +146,7 @@ public class Fraction {
     public Fraction subtract(Fraction other) {
     	int denom = this.getDenominator();
         if(this.getDenominator() != other.getDenominator()) {
-        	denom = myLcd(this.getDenominator(),other.getDenominator());
+        	denom = myLcm(this.getDenominator(),other.getDenominator());
         }
 
         int num = ((this.getNumerator() * (denom / this.getDenominator())) - (other.getNumerator() * (denom / other.getDenominator())));
