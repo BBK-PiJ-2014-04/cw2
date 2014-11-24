@@ -1,8 +1,0 @@
-print("Please write your number to find its factorial:"); 
-String input = System.console().readLine();
-int inputvalue = Integer.parseInt(input);
-int factorial = inputvalue;
-while(inputvalue > 1) {
-	factorial = factorial * (--inputvalue);
-}
-println("Here's the factorial of the number you have chosen: " + factorial);
